@@ -10,18 +10,17 @@ export const Textbox = () => {
     const getText = () => {
         Axios.get(host).then((response) => {
             setText(response.data[0].content);
-            console.log("Get")
         })
     }
 
     useEffect(() => {
         getText()
-    }, []);
+    }, [text]);
 
     useEffect(() => {
         let intervalId = setInterval(getText, 10);
         return () => clearInterval(intervalId);
-    }, [])
+    }, [text])
 
     const updateText = (value) => {
         Axios.put(host + '1', {
@@ -32,13 +31,14 @@ export const Textbox = () => {
     }
 
     const handleTextChange = (e) => {
-        if (!e.target.value) {
+        const currentText = e.target.value;
+        if (!currentText) {
             setText('')
             updateText('');
         }
         else {
-            setText(e.target.value);
-            updateText(e.target.value);
+            setText(currentText);
+            updateText(currentText);
         }
     }
 
