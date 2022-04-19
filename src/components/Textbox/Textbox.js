@@ -1,12 +1,10 @@
 import {useState, useEffect} from "react";
 import Axios from 'axios';
-import io from 'socket.io-client';
 import './Textbox.css';
 
-const host = 'http://192.168.0.122:3002/';
-let socket = io.connect(host);
 
-export const Textbox = () => {
+
+export const Textbox = ({host, socket}) => {
 
     const [text, setText] = useState('');
 
