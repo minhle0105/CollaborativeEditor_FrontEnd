@@ -1,5 +1,5 @@
 import './App.css';
-import {Textbox} from "./Textbox";
+import {Textbox} from "../Textbox/Textbox";
 
 
 function App() {

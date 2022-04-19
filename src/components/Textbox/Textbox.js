@@ -23,7 +23,8 @@ export const Textbox = () => {
     }, [socket]);
 
     useEffect(() => {
-        updateText().then(r => {})
+        updateText().then(r => {
+        })
     }, [text])
 
 
@@ -44,7 +45,8 @@ export const Textbox = () => {
     return (
         <div className="main">
             <div>
-                <textarea name="" id="textarea" cols="100" rows="60" placeholder="Enter text" onChange={handleOnChange} value={text}/>
+                <textarea name="" id="textarea" cols="100" rows="60" placeholder="Enter text" onChange={handleOnChange}
+                          value={text}/>
             </div>
         </div>
 
