@@ -1,0 +1,7 @@
+#textarea {
+    outline: none;
+    width: 90%;
+    border: 0;
+    font-size: large;
+    margin-top: 5px;
+}
